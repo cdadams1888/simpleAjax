@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Learning AJAX</title>
+    <script>
+        function ajax() {
+            var req = new XMLHttpRequest();
+            req.onreadystatechange = function(){
+                if(req.readyState == 4 && req.status == 200) {
+                    document.getElementById('test').innerHTML = req.responseText;
+                }
+            }
+            req.open('GET','data.php',true);
+            req.send();
+        }
+    </script>
+</head>
+<body>
+    <button onclick="ajax();">Click Me</button>
+    <div id="test"></div>
+</body>
+</html>
